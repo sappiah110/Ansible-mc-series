@@ -30,7 +30,7 @@ resource "null_resource" "vscode-config" {
     command = templatefile("${var.os}-ssh-script.tpl", {
       hostname     = aws_instance.ubuntu.public_ip,
       user         = "ansible",
-      IdentityFile = "~/Downloads/LM-Class32.pem"
+      IdentityFile = "~/Downloads/mynewkey.pem"
     })
     interpreter = var.os == "windows" ? ["powershell", "-Command"] : ["bash", "-c"]
   }
