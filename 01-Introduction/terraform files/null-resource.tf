@@ -1,6 +1,6 @@
 resource "null_resource" "vscode-config" {
   depends_on = [time_sleep.wait_for_instance]
-}
+
 
   connection {
     type        = "ssh"
